@@ -1,0 +1,116 @@
+package com.company;
+
+/**
+ * Created by asus on 14/04/2021.
+ */
+public class Product {
+
+        String name;
+        double price;
+        int qunantete;
+
+        public Product( String name, double price, int qunantete) {
+
+            this.name = name;
+            this.price = price;
+            this.qunantete =qunantete;
+        }
+
+        public Product(String id, String string, String price) {
+        }
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
+        }
+
+        public int getQunantete() {
+            return qunantete;
+        }
+
+        public void setQunantete(int qunantete) {
+            this.qunantete = qunantete;
+        }
+
+        @Override
+        public String toString() {
+            return "Product{" +
+                    "  name='" + name + '\'' +
+                    ", price=" + price +
+                    ", qunantete='" + qunantete + '\'' +
+                    '}';
+        }
+    }
+
+
+package com.company;
+
+/**
+ * Created by asus on 14/04/2021.
+ */
+public class Categgory {
+
+        String name ;
+        public Categgory(String name) {
+
+            this.name = name;}
+        public String getName() {
+            return name;
+        }
+        public void setName(String name) {
+            this.name = name;
+        }
+        public String toString() {
+            return "Category{" +
+                    " name='" + name + '\'' +
+
+                    '}';
+        }
+
+
+}
+
+
+package com.company;
+
+import java.util.LinkedList;
+
+public class Main {
+    static LinkedList<Categgory> categorySili;
+    static LinkedList<Product>productslinked;
+
+    public Main() {
+        categorySili = new LinkedList<>();
+        productslinked=new LinkedList<>();
+
+    }
+    public void selectcategorylinked(){
+        System.out.println(categorySili.toString());
+    }
+    public void selectproductlinked(){
+        System.out.println(productslinked.toString());
+
+    }
+
+    public static void main(String[] args) {
+        Main c=new Main();
+        Categgory category=new Categgory("clothes");
+        Product product=new Product("scarf",40,50);
+        productslinked.add(product);
+        categorySili.add(category);
+        c.selectcategorylinked();
+        c.selectproductlinked();
+
+
+    }
+}
